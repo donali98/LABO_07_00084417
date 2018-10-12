@@ -1,20 +1,11 @@
+//Parte 1
+
 //1-2
 var container = document.getElementById('c1');
 console.log(container);
 
-/**Que contiene la variable container? */
-
-/**
- * Contiene el elemento html a la que se le ha asignado el id 'c1'
- */
-
 //3
 container.innerText = 'Hola mundo!';  
-
-/**Que se visualiza en el navegador */
-/**
- * El texto del contenedor cambio de tener nada a poner 'Hola mundo!'
- */
 
 //4
 container.style.backgroundColor = '#000000';
@@ -28,11 +19,33 @@ container.style.height = '200px';
 
 //7
 container.innerHTML = '<input type= "text" placeholder= "escriba su texto">';
-/** Que es lo que se muestra en pantalla 
- * Un elemento input dentro del elemento c1
-*/
-/**
- * Cual es la diferencia entre las propiedades innerHtml e innerText?
- * Que innerText coloca un texto dentro del elemento e innerHtml puede insertar un
- * elemento dentro del contenedor indicado
- */
+
+//Parte 2
+
+//1
+var containers = document.querySelectorAll('.c2');
+console.log(containers);
+    
+//2
+containers.forEach((ele)=>{
+    ele.style.backgroundColor = '#009999';
+    ele.innerHTML = '<input type="text" placeholder= "Escriba su texto">'
+});
+
+
+//Eventos
+
+//1
+var boton = document.getElementById('btn-click');
+
+//2
+boton.onclick = (e)=>{
+    alert('hola mundo');
+}
+
+var btnCopy = document.getElementById('btnCopy');
+
+btnCopy.onclick = (e)=>{
+    let msj = document.getElementById('textMsj').value;
+    document.getElementById('showMsj').innerText = msj;
+}
